@@ -16,6 +16,16 @@ document.getElementById('cashout-btn').addEventListener('click',function(){
 
         alert("Cashout Successful");
         setBalance(newBalance);
+        const history=document.getElementById("history-container");
+        const newHistory=document.createElement("div");
+        newHistory.innerHTML=`
+        <div class="transection-card p-5 bg-base-100">
+         Cash Out ${cashoutAmount} TAKA Successfully to
+             ${cashoutNumber} , at ${new Date()}
+
+        </div>
+        `;
+        history.append(newHistory);
     }
     else{
         alert("Invalid Pin");
